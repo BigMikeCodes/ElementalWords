@@ -42,12 +42,13 @@
             var rootNode = new Node();
             var valueArray = value.ToArray();
 
-            //todo make this doesnt fail for 2 letter strinfs when max stride is 3
-            for (var i=1; i<= maxStride; i++) {
-                
-                var childNode = ToNode(valueArray, 0, i, maxStride);
+            // Handle anything that may be shorter than maxStride
+            var stride = 1;
+            while (stride <= valueArray.Length && stride <= maxStride)
+            {
+                var childNode = ToNode(valueArray, 0, stride, maxStride);
                 rootNode.AddChild(childNode);
-
+                stride++;
             }
 
             return new Trie(rootNode);

@@ -4,7 +4,7 @@ using ElementalWords;
 
 
 
-ElementalWords("abcd");
+ElementalWords("abc");
 
 void ElementalWords(string word)
 {
