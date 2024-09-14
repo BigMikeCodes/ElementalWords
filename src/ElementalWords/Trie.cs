@@ -3,13 +3,7 @@
     public class Trie
     {
 
-        public readonly Node _root;
-
-        private Trie(Node node) 
-        {
-            _root = node;
-        }
-
+        public required Node Root { get; init; }
 
 
         private static Node ToNode(char[] chars, int start, int stride, int maxStride)
@@ -51,7 +45,7 @@
                 stride++;
             }
 
-            return new Trie(rootNode);
+            return new Trie{ Root = rootNode };
 
         }
 

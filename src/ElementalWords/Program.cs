@@ -18,15 +18,10 @@ List<Element[]> ElementalWords(string word)
 {
 
     var trie = Trie.FromString(word, 3);
-
-    //todo - add traversal of the trie
-    
-    var root = trie._root;
-
     var validPaths = new List<Element[]>();
 
 
-    foreach(Node n in root.Nodes.Values){
+    foreach(Node n in trie.Root.Nodes.Values){
 
         var route = new List<Node>();
         NavigateNode(n, route, validPaths);
