@@ -117,12 +117,12 @@
             new("Ds", "Darmstadtium"),
             new("Rg", "Roentgenium "),
             new("Cn", "Copernicium "),
-            new("Nh", "Nihonium"),
+            new("Uut", "Nihonium"),
             new("Fl", "Flerovium"),
-            new("Mc", "Moscovium"),
+            new("Uup", "Moscovium"),
             new("Lv", "Livermorium"),
-            new("Ts", "Tennessine"),
-            new("Og", "Oganesson")
+            new("Uus", "Tennessine"),
+            new("Uuo", "Oganesson")
         };
 
 
