@@ -12,25 +12,24 @@
         }
 
 
-        public IEnumerable<Element[]> ElementalForms(string word)
+        public string[][] ElementalForms(string word)
         {
             var trie = Trie.FromString(word, 3);
 
-            var validPaths = new List<Element[]>();
+            var validPaths = new List<string[]>();
 
 
             foreach (Node n in trie.Root.Nodes.Values)
             {
-
                 var route = new List<Node>();
                 NavigateNode(n, route, validPaths);
             }
 
-            return validPaths;
+            return validPaths.ToArray();
 
         }
 
-        void NavigateNode(Node node, List<Node> route, List<Element[]> validPaths)
+        void NavigateNode(Node node, List<Node> route, List<string[]> validPaths)
         {
             route.Add(node);
 
@@ -44,7 +43,11 @@
             if (node.IsLeaf)
             {
                 // reached a leaf, reached the end. Must be a valid combo
-                var path = route.Select(n => _periodicTable.GetElement(n.Prefix)).ToArray();
+                var path = route
+                    .Select(node => _periodicTable.GetElement(node.Prefix))
+                    .Select(element => element.ToString())
+                    .ToArray();
+
                 validPaths.Add(path);
 
             }
