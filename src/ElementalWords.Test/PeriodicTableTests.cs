@@ -15,7 +15,7 @@
         public void PeriodicTable_GetElement_Handles_Case_Correctly(string symbol)
         {
             var fe = new Element("Fe", "Iron");
-            var table = new PeriodicTable([fe]);
+            var table = new PeriodicTable();
             
             var result = table.GetElement(symbol);
 
@@ -29,9 +29,10 @@
         {
 
             // Empty table
-            var table = new PeriodicTable([]);
+            var table = new PeriodicTable();
             
-            var hasElement = table.HasElement("Fe");
+            // element of suprise!
+            var hasElement = table.HasElement("Suprise");
 
             Assert.That(hasElement, Is.False, "hasElement should be false");
 
