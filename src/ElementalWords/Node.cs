@@ -4,20 +4,20 @@
     {
 
         public string Prefix { get; set; } = string.Empty;
-        public IDictionary<string, Node> Nodes { get; set; } = new Dictionary<string, Node>();
+        public List<Node> Nodes { get; set; } = new List<Node>();
 
         // No children == leaf node at the bottom of the trie
-        public bool IsLeaf => !Nodes.Any();
+        public bool IsLeaf => Nodes.Count == 0;
        
         public void AddChild(Node node)
         {
-            Nodes.Add(node.Prefix, node);
+            Nodes.Add(node);
         }
 
         public override string ToString()
         {
 
-            var nodesString = string.Join(", ", Nodes.Values.Select(n => n.Prefix));
+            var nodesString = string.Join(", ", Nodes.Select(n => n.Prefix));
             return $"[ Prefix = {Prefix}, Nodes = [{nodesString}] ]";
         }
 

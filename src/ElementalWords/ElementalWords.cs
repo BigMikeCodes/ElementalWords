@@ -19,7 +19,7 @@
             var validPaths = new List<string[]>();
 
 
-            foreach (Node n in trie.Root.Nodes.Values)
+            foreach (Node n in trie.Root.Nodes)
             {
                 var route = new List<Node>();
                 NavigateNode(n, route, validPaths);
@@ -54,7 +54,7 @@
             else
             {
 
-                foreach (Node n in node.Nodes.Values)
+                foreach (Node n in node.Nodes)
                 {
                     NavigateNode(n, route, validPaths);
                     route.RemoveAt(route.Count - 1);
