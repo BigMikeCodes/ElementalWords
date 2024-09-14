@@ -27,6 +27,24 @@
                     new[] {"Sulfur (S)", "Sodium (Na)", "Carbon (C)", "Potassium (K)"},
                     new[] {"Tin (Sn)", "Actinium (Ac)", "Potassium (K)"}
                 }),
+                ("SNACK", new[] {
+                    new[] {"Sulfur (S)", "Nitrogen (N)", "Actinium (Ac)", "Potassium (K)"},
+                    new[] {"Sulfur (S)", "Sodium (Na)", "Carbon (C)", "Potassium (K)"},
+                    new[] {"Tin (Sn)", "Actinium (Ac)", "Potassium (K)"}
+                }),
+                ("S", new[]
+                {
+                    new[] { "Sulfur (S)" }
+                }),
+                ("Fluuter", new[]
+                {
+                    new[] { "Flerovium (Fl)", "Nihonium (Uut)", "Erbium (Er)" }
+                }),
+                ("Uuo", new []
+                {
+                    new [] { "Uranium (U)", "Uranium (U)", "Oxygen (O)" },
+                    new [] { "Oganesson (Uuo)" }
+                })
             };
 
             foreach (var (word, expected) in cases)
