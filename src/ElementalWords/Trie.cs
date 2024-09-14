@@ -16,7 +16,7 @@
             var node = new Node { Prefix = prefix };
 
             var i = 1;
-            while (
+            while (// Dont go beyound the end of the array AND dont exceed the max stride
                 (start + i + (stride -1)) < chars.Length && 
                 (i <= maxStride))
             {
